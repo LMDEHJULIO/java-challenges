@@ -56,12 +56,8 @@ public class Main {
 
         String[] words = stringInput.split(" ");
 
-        int i = 0;
-
-
-        for(String word : words){
-           words[i] = divisibleBy(2, i+1) ? "Wu" : divisibleBy(3, i+1) ? "Tang": words[i];
-           i++;
+        for(int i = 0; i < words.length; i++){
+                words[i] = divisibleBy(2, i+1) ? "Wu" : divisibleBy(3, i+1) ? "Tang": words[i];
         }
 
         return String.join(" ", words);
