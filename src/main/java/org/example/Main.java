@@ -56,10 +56,27 @@ public class Main {
         // given maxNumber, I could probably while loop while less than maxNumber
         int i  = 0;
 
+        // starts fib sequence at 0
+
+        String fibSequnce = "0";
+
+        // current/starting num in sequnce is 1, previous 0 - aka initial point in sequence
+        // fib is basically recurring pattern of current + current - 1;
+
+        int current = 1, previous = 0;
+
         while (i < maxnumber){
             // append
+
+            fibSequnce += current;
+
+            current += previous;
+
+            previous = current - previous;
+
+            // number + number - 1
         }
-        return null;
+        return fibSequnce;
 
     }
 
@@ -71,6 +88,8 @@ public class Main {
         System.out.println(Arrays.toString(swap(testArr)));
 
         System.out.println(replaceCharacters("The Farmer went to the store to get 1 dollar's worth of fertilizer"));
+
+        System.out.println(createStringOfFibonnaciUpToMax(4));
     }
 
 
