@@ -54,7 +54,6 @@ public class Main {
 
     public static String createStringOfFibonnaciUpToMax(int maxnumber) {
         // given maxNumber, I could probably while loop while less than maxNumber
-        int i  = 0;
 
         // starts fib sequence at 0
 
@@ -65,12 +64,12 @@ public class Main {
 
         int current = 1, previous = 0;
 
-        while (i < maxnumber){
+        while (current < maxnumber){
             // append
 
             fibSequnce += current;
 
-            current += previous;
+            current += previous; // add previous to current, pushing current closer to maxNumber
 
             previous = current - previous;
 
@@ -89,7 +88,7 @@ public class Main {
 
         System.out.println(replaceCharacters("The Farmer went to the store to get 1 dollar's worth of fertilizer"));
 
-        System.out.println(createStringOfFibonnaciUpToMax(4));
+        System.out.println(createStringOfFibonnaciUpToMax(9));
     }
 
 
