@@ -37,7 +37,7 @@ public class Main {
     }
 
     //    Question 19
-    //
+    //      0  1      2     3    4      5  6
     //    " The small brown dog hopped the fence " becomes
                 //2   /3    /2*2       2*3
 
@@ -46,9 +46,25 @@ public class Main {
 
 
 
+    public static boolean divisibleBy(int denominator, int numerator){
+        return numerator != 0 && numerator % denominator == 0;
+    }
+
+
     public static String replaceWuTangTwoThreeDivisible(String stringInput) {
         //
-        return null;
+
+        String[] words = stringInput.split(" ");
+
+        int i = 0;
+
+
+        for(String word : words){
+           words[i] = divisibleBy(2, i+1) ? "Wu" : divisibleBy(3, i+1) ? "Tang": words[i];
+           i++;
+        }
+
+        return String.join(" ", words);
 
     }
 
@@ -89,6 +105,8 @@ public class Main {
         System.out.println(replaceCharacters("The Farmer went to the store to get 1 dollar's worth of fertilizer"));
 
         System.out.println(createStringOfFibonnaciUpToMax(9));
+
+        System.out.println(replaceWuTangTwoThreeDivisible("The small brown dog hopped the fence"));
     }
 
 
